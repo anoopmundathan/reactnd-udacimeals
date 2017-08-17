@@ -15,11 +15,13 @@ const logger = store => next => action => {
     console.groupEnd(action.type)
     return result
 }
-// window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
     reducer,
-    applyMiddleware(logger)    
+    composeEnhancers(
+        applyMiddleware(logger)
+    )
 )
 
 ReactDOM.render(
