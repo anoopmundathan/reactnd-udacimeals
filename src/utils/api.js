@@ -1,4 +1,4 @@
-import * as config from './config'
+import * as config from '../config/key'
 
 const API_ID = config.API_ID
 const APP_KEY = config.APP_KEY
